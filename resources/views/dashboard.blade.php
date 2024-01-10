@@ -13,6 +13,7 @@
                    Hey, {{Auth::user()->name}}
                    <a href="{{route('class.index')}}" >class</a>
                    <a href="{{route('student.index')}}">student</a>
+                   <a href="{{route('Teachers.index')}}">teacher</a>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\admin\classesController;
+use App\Http\Controllers\admin\TeacherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,9 @@ Route::post('/class/Store',[classesController::class,"classStore"])->name('class
 Route::get('/student/Delete/{id}',[classesController::class,"classdelete"])->name('student.Delete');
 Route::get('/student/update/{id}',[classesController::class,"classUpdate"])->name('student.update');
 // class end
+// teacher
+ Route::resource('Teachers',TeacherController::class);
+ 
 Route::get('/laravel',function(){
     return view('laravel');
 })->middleware('auth');
