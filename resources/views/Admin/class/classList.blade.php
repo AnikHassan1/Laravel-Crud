@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="div mt-5">
-                <a href="{{route('student.Create')}}" class="btn btn-primary float-end">Add New</a>
+                <a href="{{route('class.Create')}}" class="btn btn-primary float-end">Add New Class</a>
                 </div>
             </div>
 
@@ -21,25 +21,17 @@
                     <tr class="table-primary">
                         <th scope="col">ID</th>
                         <th scope="col">name</th>
-                        <th scope="col">email </th>
-                        <th scope="col">phone</th>
-                        <th scope="col">images</th>
-                        <th scope="col">password</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach( $std as $key=>$row)
+                    @foreach( $clad as $key=>$data)
                     <tr class="table-danger">
-                        <td>{{$row->id}}</td>
-                        <td>{{$row->name}}</td>
-                        <td>{{$row->email}}</td>
-                        <td>{{$row->phone}}</td>
-                        <td>{{$row->images}}</td>
-                        <td>{{$row->password}}</td>
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->name}}</td>
                         <td>
-                            <a href="{{route('student.update',$row->id)}}" class="btn btn-primary">Edit</a>
-                            <a href="{{route('student.delete',$row->id)}}" class="btn btn-danger">Delete</a>
+                            <a href="{{route('student.update',$data->id)}}" class="btn btn-primary">Edit</a>
+                            <a href="{{route('student.Delete',$data->id)}}" class="btn btn-danger">Delete</a>
                         </td>
 
                     </tr>

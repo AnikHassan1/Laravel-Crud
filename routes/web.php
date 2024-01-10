@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\admin\classesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +27,15 @@ Route::get('/student/index',[UserController::class,"student"])->name('student.in
 Route::get('/student/Create',[UserController::class,"studentCreate"])->name('student.Create');
 Route::post('/Student/Store',[UserController::class,"StudentStore"])->name('Student.Store');
 Route::get('/student/delete/{id}',[UserController::class,"studentDelete"])->name('student.delete');
-// student.index
+Route::get('/student/update/{id}',[UserController::class,"studentupdate"])->name('student.update');
+// student.index class.Store
+// classes start
+Route::get('/class/index',[classesController::class,'classIndex'])->name('class.index');
+Route::get('/class/Create',[classesController::class,"classCreate"])->name('class.Create');
+Route::post('/class/Store',[classesController::class,"classStore"])->name('class.Store');
+Route::get('/student/Delete/{id}',[classesController::class,"classdelete"])->name('student.Delete');
+Route::get('/student/update/{id}',[classesController::class,"classUpdate"])->name('student.update');
+// class end
 Route::get('/laravel',function(){
     return view('laravel');
 })->middleware('auth');
