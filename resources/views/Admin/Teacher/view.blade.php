@@ -9,38 +9,17 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="div mt-5">
-                <a href="" class="btn btn-primary float-end">Add New Teacher</a>
-                </div>
-            </div>
-
-            <table class="table mt-5">
-                <thead>
-                    <tr class="table-primary">
-                        <th scope="col">ID</th>
-                        <th scope="col">name</th>
-                        <th scope="col">Subject</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach( $td as $key=>$data)
-                    <tr class="table-danger">
-                        <td>{{$data->id}}</td>
-                        <td>{{$data->name}}</td>
-                        <td>{{$data->Subject}}</td>
-                        <td>
-                            <a href="" class="btn btn-primary">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
-                        </td>
-
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+    <div class="card mt-5 ms-5" style="width: 28rem; ">
+        <div class="card-header d-flex justify-content-between">
+            <h4>Teacher Information</h4>
+            <a class="btn btn-danger  " href="{{route('Teachers.index')}}">All Teachers</a>
         </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Name : {{$show->name}}</li>
+            <li class="list-group-item">Age : {{$show->Age}}</li>
+            <li class="list-group-item">Subject : {{$show->Subject}}</li>
+            <li class="list-group-item">Class : {{$show->Class_id}}</li>
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

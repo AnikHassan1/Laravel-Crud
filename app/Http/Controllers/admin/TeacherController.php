@@ -13,7 +13,8 @@ class TeacherController extends Controller
     public function index()
     {
 
-        $td=DB::table('teacher')->get();
+        // $td=DB::table('teacher')->get();
+        $td=DB::table("teacher")->join('class','teacher.Class_id','class.id')->Paginate(2);
         return view('Admin.teacher.index',compact('td'));
     }
 
@@ -52,8 +53,8 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-       $show=DB::table('teacher')->where('id',$id)->first();
-       return view('Admin.teacher.show',compact('show'));
+       $show=DB::table('teacher')->find($id);
+       return view('Admin.teacher.view',compact('show'));
     }
 
     /**

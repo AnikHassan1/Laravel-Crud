@@ -21,6 +21,7 @@
                 <tr class="table-primary">
                     <th scope="col">ID</th>
                     <th scope="col">name</th>
+                    <th scope="col">Age</th>
                     <th scope="col">Subject</th>
                     <th scope="col">Class</th>
                     <th scope="col">Action</th>
@@ -31,9 +32,10 @@
                 <tr class="table-danger">
                     <td>{{$data->id}}</td>
                     <td>{{$data->name}}</td>
+                    <td>{{$data->Age}}</td>
                     <td>{{$data->Subject}}</td>
-                   <td>{{$data->Class_id}}</td>
-                    <td>
+                   <td>{{$data->name}}</td>
+                    <td class="d-flex gap-2">
                     <a href="{{route('Teachers.show',$data->id)}}" class="btn btn-primary">Show</a>
                         <a href="{{route('Teachers.edit',$data->id)}}" class="btn btn-primary">Edit</a>
                         <form action="{{route('Teachers.destroy',$data->id)}}" method="post">
@@ -48,6 +50,7 @@
 
             </tbody>
         </table>
+        {{$td->links()}}
     </div>
     </div>
 
